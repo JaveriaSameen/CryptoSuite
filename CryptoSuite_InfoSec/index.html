@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Classical Cryptography | Cipher Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo"><i class="fas fa-shield-alt"></i><span>CRYPTOSUITE</span></div>
+  <div class="nav-links">
+    <a href="#" class="nav-link active" id="homeNavBtn">Home</a>
+    <div class="dropdown">
+      <button class="dropdown-btn">Algorithms ▼</button>
+      <div class="dropdown-content">
+        <a href="#" data-algo="caesar"><i class="fas fa-exchange-alt"></i> Caesar Cipher</a>
+        <a href="#" data-algo="playfair"><i class="fas fa-border-all"></i> Playfair Cipher</a>
+        <a href="#" data-algo="vigenere"><i class="fas fa-sync-alt"></i> Vigenère Cipher</a>
+        <a href="#" data-algo="vernam"><i class="fas fa-random"></i> Vernam Cipher</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="homeSection">
+  <div class="hero">
+    <div class="hero-text"><h1>Classical Cryptography Workshop</h1><p>Explore legendary encryption algorithms: Caesar, Playfair, Vigenère, and Vernam. Encrypt & decrypt interactively.</p></div>
+    <div class="hero-icon"><i class="fas fa-shield-alt"></i></div>
+  </div>
+  <div class="features-section">
+  <div class="features-grid">
+    <div class="feature-card" data-algo="caesar" onclick="buildDetailPage('caesar')">
+      <div class="feature-icon"><i class="fas fa-exchange-alt"></i></div>
+      <h3>Caesar Cipher</h3>
+      <p>Shift each letter by a fixed number. Classic substitution.</p>
+      <button class="card-btn" data-nav="caesar" onclick="event.stopPropagation(); buildDetailPage('caesar')">Explore →</button>
+    </div>
+    
+    <div class="feature-card" data-algo="playfair" onclick="buildDetailPage('playfair')">
+      <div class="feature-icon"><i class="fas fa-border-all"></i></div>
+      <h3>Playfair Cipher</h3>
+      <p>Digraph substitution using 5x5 Polybius square.</p>
+      <button class="card-btn" data-nav="playfair" onclick="event.stopPropagation(); buildDetailPage('playfair')">Explore →</button>
+    </div>
+    
+    <div class="feature-card" data-algo="vigenere" onclick="buildDetailPage('vigenere')">
+      <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+      <h3>Vigenère Cipher</h3>
+      <p>Polyalphabetic cipher with repeating keyword.</p>
+      <button class="card-btn" data-nav="vigenere" onclick="event.stopPropagation(); buildDetailPage('vigenere')">Explore →</button>
+    </div>
+    
+    <div class="feature-card" data-algo="vernam" onclick="buildDetailPage('vernam')">
+      <div class="feature-icon"><i class="fas fa-random"></i></div>
+      <h3>Vernam Cipher</h3>
+      <p>Addition cipher with key same length as message.</p>
+      <button class="card-btn" data-nav="vernam" onclick="event.stopPropagation(); buildDetailPage('vernam')">Explore →</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="detailContainer" class="hidden"></div>
+<footer><i class="fas fa-microchip"></i> Interactive Cryptography Lab</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
